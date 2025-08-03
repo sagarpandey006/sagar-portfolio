@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'neue';
+    src:
+    url('./assets/fonts/PPNEUEMONTREAL-MEDIUM.OTF') format('opentype'),
+        url('./assets/fonts/PPNEUEMONTREAL-SEMIBOLDITALIC.OTF') format('opentype'),
+        url('./assets/fonts/PPNEUEMONTREAL-THIN.OTF') format('opentype'),
+        url('./assets/fonts/PPNEUEMONTREAL-BOLD.OTF') format('opentype'),
+        url('./assets/fonts/PPNEUEMONTREAL-BOOK.OTF') format('opentype'),
+        url('./assets/fonts/PPNEUEMONTREAL-ITALIC.OTF') format('opentype'),
+
+}
+
+body {
+    font-family: 'neue', sans-serif;
+    background-color: rgb(37, 32, 47);
+    color: #e8e8e8;
+    
+}
+
+/* Add this to handle fixed navbar scroll offset */
+html {
+  scroll-padding-top: 70px;
+  scroll-behavior: smooth;
+}
+
+/* Optional: Ensure sections have proper spacing */
+section[id] {
+  scroll-margin-top: 70px;
+}
+
+@keyframes spin-slow {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 0.5s linear;
+}
+
+/* Replace the existing navbar styles with these: */
+
+/* Fake navbar for spacing */
+.fakenavbar {
+    height: 0px;
+    width: 0%;
+    background-color: transparent;
+}
+
+/* Main navbar with rounded design */
+.navbar {
+    background: linear-gradient(to bottom right, rgba(48 38 57 / 20%), rgba(50, 20, 100, 0.3));
+    backdrop-filter: blur(10px);
+    height: 65px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    justify-content: flex-start; /* space-between se flex-start kiya */
+    gap: 20px; /* Elements ke beech consistent gap */
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    border: 1px solid rgba(40, 31, 54, 0.3);
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.navbar-tabs {
+    display: flex;
+    height: 100%;
+    flex-grow: 1; /* Available space le lega */
+    align-items: center;
+}
+
+.navbar-tabs-ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-tabs-ul li {
+    width: fit-content;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar-tabs-ul li:hover:before {
+    content: "";
+    background-color: #8245ec;
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    left: -15px;
+    z-index: 1;
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.navbar-tabs-ul button {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-tabs-ul button:hover {
+    color: #8245ec;
+}
+
+/* Logo styles */
+.logo {
+    position: relative;
+    width: 60px; /* Fixed width instead of percentage */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth easing */
+    flex-shrink: 0; /* Logo shrink nahi hoga */
+}
+
+.hey {
+    color: white;
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 300;
+    background-color: #20222e;
+    padding: 8px 15px;
+    border-radius: 20px;
+    left: 80px;
+    bottom: -50px; /* Start from bottom */
+    opacity: 0;
+    z-index: 10;
+    white-space: nowrap;
+    /* Remove transition - we'll use animation */
+}
+
+/* Popup animation - only triggers once on page load */
+.hey.popup {
+    animation: pop-up 8s linear;
+}
+
+@keyframes pop-up {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    20% {
+        bottom: 100px;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    80% {
+        bottom: 100px;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        bottom: 100px;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.logo-top {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center bottom;
+    position: relative;
+}
+
+.logo-top img {
+    height: 100%;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+/* Smooth hover animation */
+.logo:hover {
+    transform: translateY(50px); /* Reduced from 100px */
+}
+
+.logo:hover .logo-top img {
+    transform: scale(1.1);
+}
+
+/* Theme and sound controls */
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Proper gap between buttons */
+    flex-shrink: 0; /* Controls shrink nahi honge */
+    margin-left: auto; /* Right side pe push kar dega */
+}
+
+.navbar-controls button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Buttons shrink nahi honge */
+}
+
+/* Mobile hamburger */
+.mobile-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 95%;
+        padding: 0 15px;
+        height: 60px;
+    }
+    
+    .navbar-tabs {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    .logo {
+        width: 15%;
+    }
+    
+    .hey {
+        left: 60px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Logo text styling */
+.logo-text {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Text shrink nahi hoga */
+}
+
+.logo-text:hover {
+    transform: scale(1.05);
+}
