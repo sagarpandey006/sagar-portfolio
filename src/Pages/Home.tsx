@@ -10,8 +10,8 @@ const Home = () => {
     <div className="w-[90%] mx-auto">
         <Landing/>
         <About/>
-        <Projects/>
         <Experience/>
+        <Projects/>
         <Contact/>
         <SplashCursor/>
     </div>
