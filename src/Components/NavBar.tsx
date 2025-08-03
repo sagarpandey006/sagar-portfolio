@@ -11,7 +11,7 @@ import menuSound from "../assets/mp3/menu.mp3";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true); // Theme state - default dark
   const [isSoundOn, setIsSoundOn] = useState(false); // Sound state - default off
   // const [isRotating, setIsRotating] = useState(false);
@@ -32,7 +32,7 @@ const Navbar = () => {
   // Detect scroll and change navbar background
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      // setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);

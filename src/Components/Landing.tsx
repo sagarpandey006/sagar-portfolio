@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import Typewriter from 'typewriter-effect';
 import Tilt from 'react-parallax-tilt';
 import { FiExternalLink } from 'react-icons/fi'; // Import for terminal link icon
