@@ -95,8 +95,10 @@ const Navbar = () => {
 
   // Mobile menu toggle function
   const toggleMobileMenu = () => {
+    console.log("Menu button clicked, current isOpen:", isOpen);
     setIsOpen(!isOpen);
     playSound(menuSound); // Play menu sound
+    console.log("Menu state will change to:", !isOpen);
   };
 
   // Terminal Section to render
@@ -184,7 +186,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Icon */}
-        <div className="mobile-toggle">
+        <div className="block md:hidden mobile-toggle">
           {isOpen ? (
             <FiX
               size={24}
@@ -199,61 +201,6 @@ const Navbar = () => {
             />
           )}
         </div>
-
-        {/* Mobile Menu Items */}
-        {isOpen && (
-          <div style={{
-            position: 'absolute',
-            top: '90px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '90%',
-            background: 'rgba(5, 4, 20, 0.9)',
-            backdropFilter: 'blur(10px)',
-            borderRadius: '20px',
-            padding: '20px',
-            zIndex: 1000
-          }}>
-            <ul style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              gap: '15px',
-              listStyle: 'none',
-              margin: 0,
-              padding: 0,
-              alignItems: 'center'
-            }}>
-              {menuItems.map((item) => (
-                <li key={item.id}>
-                  <button 
-                    onClick={() => item.isExternal ? handleTerminalClick() : handleMenuItemClick(item.id)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: activeSection === item.id ? '#8245ec' : 'white',
-                      fontSize: '1.1rem',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-              <div style={{ display: 'flex', gap: '20px', marginTop: '10px' }}>
-                <button onClick={toggleTheme} style={{ background: 'none', border: 'none' }}>
-                  <img 
-                    src={isDarkMode ? moonIcon : sunIcon} 
-                    alt="Theme toggle"
-                    style={{ width: '24px', height: '24px' }}
-                  />
-                </button>
-                <button onClick={toggleSound} style={{ background: 'none', border: 'none', color: 'white' }}>
-                  {isSoundOn ? <FiVolume2 size={24} /> : <FiVolumeX size={24} />}
-                </button>
-              </div>
-            </ul>
-          </div>
-        )}
         
         {/* Hidden Audio Element */}
         <audio 
@@ -263,6 +210,92 @@ const Navbar = () => {
           style={{ display: 'none' }}
         />
       </nav>
+
+      {/* Mobile Menu Items - Separate from navbar */}
+      {isOpen && (
+        <div 
+          className="block md:hidden"
+          style={{
+            position: 'fixed',
+            top: '100px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '90%',
+            maxWidth: '400px',
+            background: 'rgba(5, 4, 20, 0.95)',
+            backdropFilter: 'blur(15px)',
+            borderRadius: '20px',
+            padding: '25px',
+            zIndex: 10000,
+            display: 'block',
+            visibility: 'visible',
+            opacity: '1',
+            border: '1px solid rgba(130, 69, 236, 0.3)',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)'
+          }}
+        >
+          <ul style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '15px',
+            listStyle: 'none',
+            margin: 0,
+            padding: 0,
+            alignItems: 'center'
+          }}>
+            {menuItems.map((item) => (
+              <li key={item.id}>
+                <button 
+                  onClick={() => item.isExternal ? handleTerminalClick() : handleMenuItemClick(item.id)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: activeSection === item.id ? '#8245ec' : 'white',
+                    fontSize: '1.1rem',
+                    cursor: 'pointer',
+                    padding: '8px 16px',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+            <div style={{ display: 'flex', gap: '20px', marginTop: '15px', paddingTop: '15px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+              <button 
+                onClick={toggleTheme} 
+                style={{ 
+                  background: 'none', 
+                  border: 'none', 
+                  padding: '8px',
+                  borderRadius: '8px',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <img 
+                  src={isDarkMode ? moonIcon : sunIcon} 
+                  alt="Theme toggle"
+                  style={{ width: '24px', height: '24px' }}
+                />
+              </button>
+              <button 
+                onClick={toggleSound} 
+                style={{ 
+                  background: 'none', 
+                  border: 'none', 
+                  color: 'white',
+                  padding: '8px',
+                  borderRadius: '8px',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                {isSoundOn ? <FiVolume2 size={24} /> : <FiVolumeX size={24} />}
+              </button>
+            </div>
+          </ul>
+        </div>
+      )}
     </>
   );
 };
