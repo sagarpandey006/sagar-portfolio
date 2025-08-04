@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-spring/web": "^10.0.1",
     "@tailwindcss/vite": "^4.1.4",
     "clsx": "^2.1.1",
@@ -23,6 +24,7 @@
     "react-parallax-tilt": "^1.7.304",
     "react-router-dom": "^6.30.0",
     "react-scroll": "^1.9.3",
+    "react-toastify": "^11.0.5",
     "tailwind-merge": "^3.3.0",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.1.4",
