@@ -1,32 +1,48 @@
+import sati from "../assets/exp/SATI_Vidisha.jpg";
+import swoc from "../assets/exp/SWOC.jpeg";
+import ybi from "../assets/exp/ybi_foundation.jpg";
+
 interface Experiences {
-    position: string,
-    society: string,
-    startYear: string,
-    endYear: string,
-    desc: string
+    position: string;
+    company: string;
+    location: string;
+    startYear: string;
+    endYear: string;
+    image: string;
+    desc: string;
 }
-const experience: Experiences[] = [ 
+
+const experience: Experiences[] = [
     {
-        position: "Social Media Head",
-        society: "Digital Arts Society",
-        startYear: "2023",
-        endYear: "present",
-        desc: "I have organized various events thorughout the tenure,  led the technical team and together we developed the Digital Arts Society website"
+        position: "Open Source Developer",
+        company: "SWOC (Social Winter of Code 5.0)",
+        location: "Remote",
+        startYear: "January 2025",
+        endYear: "March 2025",
+        image: swoc,
+        desc: `• Built and optimized web applications to enhance performance and user engagement.
+• Worked closely with diverse teams to introduce new features and resolve issues, improving overall application efficiency.`
     },
     {
-        position: "Design & Social Media Head",
-        society: "BVP Optica",
-        startYear: "2023",
-        endYear: "present",
-        desc: "Led a team of 30+ designers to create various promotional materials including posters and social media content across multiple events. Also as an Event Coordinator for Roboleague, I managed a team of 60+ members and ensured a smooth experience for 45+ participants. ",
+        position: "AI-ML Intern",
+        company: "YBI Foundation",
+        location: "Remote",
+        startYear: "July 2023",
+        endYear: "Aug 2023",
+        image: ybi,
+        desc: `• Collaborated on real-world artificial intelligence and machine learning projects, applying theoretical knowledge to develop data-driven solutions.
+• Developed and optimized algorithms using Python, TensorFlow, and scikit-learn to solve complex problems.`
     },
     {
-        position: "Design Member",
-        society: "TEDxBVCOE",
-        startYear: "2024",
-        endYear: "2025",
-        desc: "Created several designs for TEDxBVCOE social media page, including Instagram stories and posts."
+        position: "IT Intern",
+        company: "SATI, Vidisha",
+        location: "Onsite, Vidisha",
+        startYear: "June 2023",
+        endYear: "July 2023",
+        image: sati,
+        desc: `• Gained hands-on experience in various IT domains, including software development, network administration, and database management.
+• Worked on collaborative projects under mentorship, enhancing problem-solving skills and adaptability in a professional environment.`
     },
-]
+];
 
 export default experience;

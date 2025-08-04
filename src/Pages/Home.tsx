@@ -1,6 +1,7 @@
 import About from "../Components/About"
 import Projects from "../Components/Projects"
 import Experience from "../Components/Experience"
+import Internship from "../Components/Internship"
 import Hackathons from "../Components/Hackathons"
 import Contact from "../Components/Contact"
 import Landing from "../Components/Landing"
@@ -13,7 +14,8 @@ const Home = () => {
         <Landing/>
         <About/>
         <Skills/>
-        <Experience/>
+        <Experience/> 
+        <Internship/> 
         <Hackathons/>
         <Projects/>
         <Contact/>
