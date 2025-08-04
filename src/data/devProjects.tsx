@@ -1,6 +1,7 @@
-import da from "../assets/dev/da.png"
-import quickfleet from "../assets/dev/quickfleet.png"
-import sponsorshipBridge from "../assets/dev/sponsorshipBridge.png"
+import dt from "../assets/dev/daily-task.png"
+import gmt from "../assets/dev/growmytherapy.png"
+import ms from "../assets/dev/mindskoon.png"
+import pt from "../assets/dev/portfolio.png"
 interface DevProjects {
     title :string,
     subtitle : string,
@@ -14,30 +15,40 @@ interface DevProjects {
 
 const devProject:DevProjects[] = [
     {
-        title: "Digital Arts Society Website",
+        title: "Mind'Skoon",
         subtitle : "Web Development",
         year : "2025", 
-        imgURL :  da, 
+        imgURL :  ms, 
         desc : "The official website I built for DASBVP, featuring event details, team details, upcoming event updates. The platform serves as a connecting point for the team, facilitating updates to all team members.", 
         link : "https://dasbvp.onrender.com/",
         gitlink : "https://github.com/ishikamanchanda30/DASBVP",
         techStack: ['React','TypeScript','TailwindCSS'],
     },
     {
-        title: "Sponsorship Bridge",
+        title: "Portfolio Site",
         subtitle : "Web Development",
         year : "2025",
-        imgURL : sponsorshipBridge,
+        imgURL : pt,
         desc : "A comprehensive website to connect Startups and College Societies featuring Smart AI society-sponsor matching with real-time chat. Streamlining the process for societies to find sponsorships for their events.", 
         link : "https://github.com/ishikamanchanda30/Sponsorship-Bridge.git",
         gitlink : "https://github.com/ishikamanchanda30/Sponsorship-Bridge.git",
         techStack: ['React','TypeScript','TailwindCSS','NodeJS', 'ExpressJS', 'MongoDB', 'Redux', 'Socket', 'Python'],
     },
     {
-        title: "Quick Fleet Website",
+        title: "Daily Task Management",
         subtitle : "Web Development",
-        year : "2024",
-        imgURL : quickfleet,
+        year : "2025",
+        imgURL : dt,
+        desc : "A responsive and user-friendly front-end prototype website for a telematics platform focused on long-haul trucking efficiency.", 
+        link : "https://github.com/ishikamanchanda30/SIH-Website-A",
+        gitlink : "https://github.com/ishikamanchanda30/SIH-Website-A",
+        techStack: ['HTML','CSS','Javascript'],
+    },
+    {
+        title: "Grow MY Therapy",
+        subtitle : "Web Development",
+        year : "2025",
+        imgURL : gmt,
         desc : "A responsive and user-friendly front-end prototype website for a telematics platform focused on long-haul trucking efficiency.", 
         link : "https://github.com/ishikamanchanda30/SIH-Website-A",
         gitlink : "https://github.com/ishikamanchanda30/SIH-Website-A",
