@@ -5,8 +5,8 @@ const Internship: React.FC = () => {
   return (
     <div className="p-3 m-auto md:min-h-[80vh]" id="internship">
       {/* Section Title */}
-      <div className="text-4xl md:text-6xl mb-4 text-white">INTERNSHIPS</div>
-      <div className="border-1 border-[#686868] opacity-20 mb-10"></div>
+      <div className="text-2xl md:text-4xl mb-4 text-white">OPEN SOURCE & INTERNSHIPS</div>
+      <div className="border-1 border-[#686868] opacity-20 mb-6"></div>
       <p className="text-gray-400 text-sm sm:text-base lg:text-lg font-medium max-w-l leading-relaxed">
         A showcase of my internship experiences, highlighting my roles, organizations, timelines, locations, and key contributions.
       </p>

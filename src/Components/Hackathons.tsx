@@ -5,8 +5,8 @@ const Hackathons: React.FC = () => {
   return (
     <div className="p-3 m-auto md:min-h-[80vh]" id="hackathons">
       {/* Section Title */}
-      <div className="text-4xl md:text-6xl mb-4 text-white">HACKATHONS</div>
-      <div className="border-1 border-[#686868] opacity-20 mb-10"></div>
+      <div className="text-2xl md:text-4xl mb-4 text-white">HACKATHONS</div>
+      <div className="border-1 border-[#686868] opacity-20 mb-6"></div>
       <p className="text-gray-400 text-sm sm:text-base lg:text-lg font-medium max-w-l leading-relaxed">
         A showcase of the hackathons I have participated in, highlighting my problem-solving skills, teamwork, and innovative thinking.
       </p>

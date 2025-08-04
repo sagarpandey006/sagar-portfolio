@@ -1,8 +1,6 @@
 import About from "../Components/About"
 import Projects from "../Components/Projects"
 import Experience from "../Components/Experience"
-import Internship from "../Components/Internship"
-import Hackathons from "../Components/Hackathons"
 import Contact from "../Components/Contact"
 import Landing from "../Components/Landing"
 import SplashCursor from "../Components/ui/Animations/SplashCursor/SplashCursor"
@@ -15,8 +13,6 @@ const Home = () => {
         <About/>
         <Skills/>
         <Experience/> 
-        <Internship/> 
-        <Hackathons/>
         <Projects/>
         <Contact/>
         <SplashCursor/>
