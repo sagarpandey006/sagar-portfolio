@@ -3,6 +3,7 @@ import RotatingCircle from './Circle';
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AnimationBoy from './ui/Animations/boy/AnimationBoy';
 const Contacts: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -185,7 +186,7 @@ const Contacts: React.FC = () => {
 
   return (
 
-    <div className=" w-[100%]  flex flex-col mb-10" id='contact'>
+    <div className=" w-[100%]  flex flex-col mb-0" id='contact'>
       {/* Toast Container */}
       <ToastContainer />
       
@@ -211,18 +212,31 @@ const Contacts: React.FC = () => {
         </div>
       </div>
       <div className="w-full flex flex-col md:flex-row justify-between mt-10">
+        {/* Left side - 2/3 width divided into 3 parts */}
         <div className="w-full md:w-2/3 mt-4 mr-10">
-          <div className="text-7xl md:text-9xl  font-[600] leading-none">
-            LET'S
-          </div>
-          <div className="text-7xl md:text-9xl  font-[600] leading-none text-right">
-            CONNECT
+          <div className="grid grid-cols-3 gap-4 h-full">
+            {/* Left part (1/3) - Animation Boy */}
+            <div className="flex items-center justify-center">
+              <AnimationBoy />
+            </div>
+            
+            {/* Right parts (2/3) - LET'S CONNECT */}
+            <div className="col-span-2 flex flex-col justify-center">
+              <div className="text-7xl md:text-9xl font-[600] leading-none">
+                LET'S
+              </div>
+              <div className="text-7xl md:text-9xl font-[600] leading-none">
+                CONNECT
+              </div>
+            </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 m-0 mt-2 md:m-10">
+        
+        {/* Right side - 1/3 width for form */}
+        <div className="w-full md:w-1/3 m-0 mt-2 md:m-2">
           <div className='w-full'>
             <form ref={form} onSubmit={submitForm}>
-              <div className="mb-6">
+              <div className="mb-4">
                 <input
                   type="text"
                   name="name"
@@ -239,7 +253,7 @@ const Contacts: React.FC = () => {
                 {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
               </div>
 
-              <div className="mb-6">
+              <div className="mb-4">
                 <input
                   type="email"
                   name="email"
@@ -256,7 +270,7 @@ const Contacts: React.FC = () => {
                 {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
               </div>
               
-              <div className="mb-6">
+              <div className="mb-4">
                 <input
                   type="tel"
                   name="phone"
@@ -273,13 +287,13 @@ const Contacts: React.FC = () => {
                 {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
               </div>
               
-              <div className="mb-6">
+              <div className="mb-4">
                 <textarea
                   name="message"
                   placeholder="Message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={3}
+                  rows={2}
                   className={`w-full bg-transparent border-b py-2 focus:outline-none transition-colors resize-none ${
                     errors.message 
                       ? 'border-red-500 focus:border-red-500' 
@@ -290,7 +304,7 @@ const Contacts: React.FC = () => {
                 {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex justify-end mt-6">
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -311,6 +325,19 @@ const Contacts: React.FC = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+      
+      {/* Compact Black Footer - Full width, no gap */}
+      <div className="w-screen bg-black mt-0 py-4 px-4 -mx-[5vw] -mb-[5vw]">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 max-w-full">
+          <div className="mb-2 md:mb-0">
+            <span>© 2025 Sagar Pandey. All rights reserved.</span>
+          </div>
+          <div className="flex gap-4">
+            <span>Design & Built with ❤️ by Sagar</span>
+            <span></span>
           </div>
         </div>
       </div>
