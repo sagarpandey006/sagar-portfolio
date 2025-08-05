@@ -103,7 +103,7 @@ const Navbar = () => {
 
   // Terminal Section to render
   const handleTerminalClick = () => {
-  window.open("https://sagarpandey006.netlify.app/", "_blank");
+  window.open("https://sagar-terminal.netlify.app/", "_blank");
   };
 
 

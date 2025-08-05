@@ -61,7 +61,7 @@ const Landing = () => {
               </p>
               <div className="flex justify-center">
                 <a
-                  href="https://sagarpandey006.netlify.app/"
+                  href="https://sagar-terminal.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-white py-2 px-6 rounded-full text-base font-bold transition duration-300 transform hover:scale-105"
