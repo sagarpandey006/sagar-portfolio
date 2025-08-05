@@ -215,19 +215,20 @@ const Contacts: React.FC = () => {
         {/* Left side - 2/3 width divided into 3 parts */}
         <div className="w-full md:w-2/3 mt-4 mr-10">
           <div className="grid grid-cols-3 gap-4 h-full">
-            {/* Left part (1/3) - Animation Boy */}
-            <div className="flex items-center justify-center">
-              <AnimationBoy />
-            </div>
-            
+                        
             {/* Right parts (2/3) - LET'S CONNECT */}
             <div className="col-span-2 flex flex-col justify-center">
               <div className="text-7xl md:text-9xl font-[600] leading-none">
                 LET'S
               </div>
-              <div className="text-7xl md:text-9xl font-[600] leading-none">
+              <div className="text-5xl md:text-9xl font-[600] leading-none">
                 CONNECT
               </div>
+            </div>
+
+            {/* Left part (1/3) - Animation Boy */}
+            <div className="flex items-center justify-center">
+              <AnimationBoy />
             </div>
           </div>
         </div>
