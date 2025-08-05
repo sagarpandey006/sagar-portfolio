@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import boy from '/assets/nav-img/boy.png';
+// import boy from '/assets/nav-img/boy.png';
 
 const AnimationBoy: React.FC = () => {
   const leftPupilRef = useRef<HTMLDivElement>(null);
@@ -176,7 +176,7 @@ const AnimationBoy: React.FC = () => {
         <div className="animation-boy-content">
           <div className="animation-boy-avatar-container">
             <img 
-              src={boy} 
+              src="/assets/nav-img/boy.png"
               alt="Sagar Avatar" 
               className="animation-boy-avatar-img" 
             />
