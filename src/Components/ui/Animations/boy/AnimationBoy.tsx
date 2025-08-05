@@ -175,7 +175,7 @@ const AnimationBoy: React.FC = () => {
         <div className="animation-boy-content">
           <div className="animation-boy-avatar-container">
             <img 
-              src="/src/assets/nav-img/boy.png" 
+              src="src\assets\nav-img\boy.png" 
               alt="Sagar Avatar" 
               className="animation-boy-avatar-img" 
             />
