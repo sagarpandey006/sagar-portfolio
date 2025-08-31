@@ -8,7 +8,6 @@ import reduxLogo from "../assets/tech_logo/redux.png";
 import nextjsLogo from "../assets/tech_logo/nextjs.png";
 import tailwindcssLogo from "../assets/tech_logo/tailwindcss.png";
 import materialuiLogo from "../assets/tech_logo/materialui.png";
-// import bootstrapLogo from "../assets/tech_logo/bootstrap.png";
 import nodejsLogo from "../assets/tech_logo/nodejs.png";
 import expressjsLogo from "../assets/tech_logo/express.png";
 import mysqlLogo from "../assets/tech_logo/mysql.png";
@@ -23,7 +22,6 @@ import gitLogo from "../assets/tech_logo/git.png";
 import githubLogo from "../assets/tech_logo/github.png";
 import vscodeLogo from "../assets/tech_logo/vscode.png";
 import postmanLogo from "../assets/tech_logo/postman.png";
-// import mcLogo from "../assets/tech_logo/mc.png";
 import figmaLogo from "../assets/tech_logo/figma.png";
 import netlifyLogo from "../assets/tech_logo/netlify.png";
 import vercelLogo from "../assets/tech_logo/vercel.png";
@@ -51,7 +49,6 @@ const SkillsInfo: SkillCategory[] = [
       { name: "Tailwind CSS", logo: tailwindcssLogo },
       { name: "Material UI", logo: materialuiLogo },
       { name: "Sass", logo: sassLogo },
-      // { name: "Bootstrap", logo: bootstrapLogo },
     ],
   },
   {
